@@ -26,3 +26,14 @@
     margin: 0px;
     padding: 0px;
 }
+button[data-read="true"]{
+    background-color: green;
+    size: 200px;
+}
+button[data-read="false"]{
+    background-color: red;
+    size: 200px;
+}
+.card button{
+padding: 20px;
+}
