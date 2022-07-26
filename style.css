@@ -1,0 +1,28 @@
+.container {
+}
+.button-round {
+    border-radius: 100%;
+    size: 150px;
+    font-size: 40px;
+    position:fixed;
+    bottom: 100px;
+    right: 100px;
+}
+.button-round:hover {
+    transform: scale(1.2);
+}
+.library {
+    margin:50px 150px;
+    display: grid;
+    grid-auto-flow: rows;
+    gap: 50px;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    /* justify-content: space-between; */
+    justify-items: center;
+}
+.library>* {
+    border: 1px solid black;
+    margin: 0px;
+    padding: 0px;
+}
