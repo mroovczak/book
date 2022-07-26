@@ -29,7 +29,7 @@ function drawLibrary() {
         </div>
         <div class="card-section">
           <h4>${book.author}</h4>
-          <p>${book.pages}</p>
+          <p>Pages: ${book.pages}</p>
           <button class=" book"
           data-id=${book.id}
           data-read=${book.read}
