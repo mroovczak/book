@@ -66,7 +66,8 @@ deleteButtons.forEach(button => {
             return (b.id == e.target.dataset.id);
         })
         const card = document.querySelector(`[data-id="${e.target.dataset.id}"]`)
-        // book;
+        myLibrary = myLibrary.filter(book => book.id != e.target.dataset.id);
         card.remove();
+        console.table(myLibrary);
     });
 });
