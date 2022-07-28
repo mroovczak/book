@@ -8,8 +8,10 @@ function Book(title, author, pages, id, read = false) {
     this.id = id;
 }
 
-function addBookToLibrary() {
-
+function addBookToLibrary(values) {
+    myLibrary.push(new Book(...values));
+    drawLibrary();
+    console.table(myLibrary);
 }
 for (let i = 0; i < 15; i++) {
     myLibrary.push(new Book('KSIONDXZ', `DUPA JASU ${i}`, '232', i, true))
@@ -17,6 +19,7 @@ for (let i = 0; i < 15; i++) {
 
 function drawLibrary() {
     const library = document.querySelector(".library")
+    library.innerHTML = '';
     myLibrary.forEach(book => {
         // console.log(book);
         const newCard = document.createElement("div");
@@ -70,4 +73,22 @@ deleteButtons.forEach(button => {
         card.remove();
         console.table(myLibrary);
     });
+});
+
+addButton = document.querySelector(`#buttonAdd[data-toggle="addBookForm"]`);
+addButton.addEventListener('click',(e)=>{
+    const form = document.querySelector(`div[data-toggle="${e.target.dataset.toggle}"]`);
+    form.dataset.visible = true;
+    // console.log(form);
+})
+sendButton = document.querySelector(`#buttonSend[data-toggle="addBookForm"]`);
+sendButton.addEventListener('click',(e)=>{
+    const form = document.querySelector(`div[data-toggle="${e.target.dataset.toggle}"]`);
+    const inputs =new Array (...form.querySelectorAll("input"));
+    const values = inputs.map(x=>{
+        return x.value;
+    })
+    addBookToLibrary(values);
+    console.log(values);
+    form.dataset.visible = false;
 });

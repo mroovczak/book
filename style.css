@@ -37,3 +37,20 @@ button[data-read="false"]{
 .card button{
 padding: 20px;
 }
+.formCard{
+    display: block;
+    position: fixed;
+    bottom: 50px;
+    width: 20%;
+    height: 50%;
+    box-shadow: 1px 1px 20px;
+    background-color: antiquewhite;
+}
+.formCard[data-visible="true"]{
+    right: 50px;
+    transition: right 2s;
+}
+.formCard[data-visible="false"]{
+    right: -550px;
+    transition: right 2s;
+}

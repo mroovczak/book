@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BOOKS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.7.5/css/foundation-float.min.css" integrity="sha512-COhcCg6IPtpBb4rDu3fJb+MOVP8vjJmoASF9jl8KoPQwQTlh3pKBE7FHPBPLnd3jV/ZJ77g+8haAFlNwtkOi1Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/js/foundation.min.js" crossorigin="anonymous"></script>
     <script src="./script.js" defer></script>
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -14,7 +18,21 @@
     <div class="container">
         <div class="library">
         </div>
-        <button class="button success button-round">+</button>
+        <button id="buttonAdd" class="button success button-round" data-toggle="addBookForm">+</button>
+        <div class="formCard" data-visible="false" data-toggle="addBookForm">
+            
+            <label>Titel
+                <input name="title" type="text" placeholder="Title">
+            </label>
+            <label>Auther
+                <input name="author" type="text" placeholder="Author">
+            </label>
+            <label>Pages
+                <input name="pages" type="number" placeholder="Author">
+            </label>
+            <button id="buttonSend" type="button" value="ADD" class="button"data-toggle="addBookForm">ADD</button>
+
+        </div>
     </div>
 </body>
 </html>
